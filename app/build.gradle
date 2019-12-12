@@ -34,7 +34,7 @@ dependencies {
     implementation 'com.github.SoumikBhatt:toaster:1.0.0'
 
     //custom pop up
-    implementation 'com.github.SoumikBhatt.toaster:custompopup:1.0.1'
+    implementation 'com.github.SoumikBhatt.toaster:custompopup:1.0.2'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
