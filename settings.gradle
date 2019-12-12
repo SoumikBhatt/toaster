@@ -1,2 +1,2 @@
-include ':app', ':toaster'
+include ':app', ':toaster', ':custompopup'
 rootProject.name='LibraryTest'
