@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
+import kotlinx.android.synthetic.main.custom_exit.*
 
 class Popup {
 
@@ -93,6 +94,29 @@ class Popup {
             val okButton = dialog.findViewById<Button>(R.id.btn_dialog)
             okButton.typeface=typeFace
             okButton.setOnClickListener { dialog.dismiss() }
+
+            dialog.show()
+        }
+
+        fun exit(activity: Activity,heading: String,subTitle: String){
+
+            val dialog = Dialog(activity)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setCancelable(true)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.setContentView(R.layout.custom_exit)
+
+            val headingTV = dialog.tv_heading
+            headingTV.text=heading
+
+            val titleTV = dialog.tv_sub_title
+            titleTV.text=subTitle
+
+            val ok = dialog.iv_ok
+            ok.setOnClickListener { activity.finishAffinity() }
+
+            val cancel = dialog.iv_cancel
+            cancel.setOnClickListener { dialog.dismiss() }
 
             dialog.show()
         }
