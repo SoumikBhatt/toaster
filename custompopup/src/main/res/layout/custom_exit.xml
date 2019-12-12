@@ -13,11 +13,12 @@
 
         <TextView
             android:id="@+id/tv_heading"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_centerHorizontal="true"
             android:text="Quit App?"
+            android:gravity="center"
             android:textColor="#2B3740"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -26,9 +27,10 @@
 
         <TextView
             android:id="@+id/tv_sub_title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:gravity="center"
             android:text="Do you really want to exit"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/tv_heading"
