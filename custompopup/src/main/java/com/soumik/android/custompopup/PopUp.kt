@@ -51,7 +51,7 @@ class PopUp {
 
             val headingTV = dialog.findViewById<TextView>(R.id.b)
             headingTV.text=heading
-            headingTV.setTextColor(Color.parseColor("#0DEB43"))
+            headingTV.setTextColor(Color.parseColor("#E2574C"))
             val titleTV = dialog.findViewById<TextView>(R.id.text_dialog)
             titleTV.text=message
 
