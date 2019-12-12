@@ -8,42 +8,47 @@ import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
 
-class PopUp {
+class Popup {
 
     companion object{
 
 
-        fun success(activity: Activity,heading:String,message:String){
+        fun success(activity: Activity,heading:String,message:String,font: Int){
 
             val dialog = Dialog(activity)
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
             dialog.setCancelable(false)
             dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             dialog.setContentView(R.layout.custom_pop_up)
-
+            val typeFace = ResourcesCompat.getFont(activity,font)
             val imageView = dialog.findViewById<ImageView>(R.id.a)
             imageView.setImageResource(R.drawable.ic_checked)
 
             val headingTV = dialog.findViewById<TextView>(R.id.b)
             headingTV.text=heading
             headingTV.setTextColor(Color.parseColor("#0DEB43"))
+            headingTV.typeface=typeFace
             val titleTV = dialog.findViewById<TextView>(R.id.text_dialog)
             titleTV.text=message
+            titleTV.typeface=typeFace
 
             val okButton = dialog.findViewById<Button>(R.id.btn_dialog)
+            okButton.typeface=typeFace
             okButton.setOnClickListener { dialog.dismiss() }
 
             dialog.show()
         }
 
-        fun error(activity: Activity,heading:String,message:String){
+        fun error(activity: Activity,heading:String,message:String,font: Int){
 
             val dialog = Dialog(activity)
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
             dialog.setCancelable(false)
             dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             dialog.setContentView(R.layout.custom_pop_up)
+            val typeFace = ResourcesCompat.getFont(activity,font)
 
             val imageView = dialog.findViewById<ImageView>(R.id.a)
             imageView.setImageResource(R.drawable.ic_red_alert)
@@ -51,16 +56,19 @@ class PopUp {
             val headingTV = dialog.findViewById<TextView>(R.id.b)
             headingTV.text=heading
             headingTV.setTextColor(Color.parseColor("#E2574C"))
+            headingTV.typeface=typeFace
             val titleTV = dialog.findViewById<TextView>(R.id.text_dialog)
             titleTV.text=message
+            titleTV.typeface=typeFace
 
             val okButton = dialog.findViewById<Button>(R.id.btn_dialog)
+            okButton.typeface=typeFace
             okButton.setOnClickListener { dialog.dismiss() }
 
             dialog.show()
         }
 
-        fun customNotification(activity: Activity,heading:String,message:String,icon:Int) {
+        fun customPopup(activity: Activity,heading:String,message:String,icon:Int,font:Int) {
 
             val dialog = Dialog(activity)
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -68,16 +76,22 @@ class PopUp {
             dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             dialog.setContentView(R.layout.custom_pop_up)
 
+
+            val typeFace = ResourcesCompat.getFont(activity,font)
+
             val imageView = dialog.findViewById<ImageView>(R.id.a)
             imageView.setImageResource(icon)
 
             val headingTV = dialog.findViewById<TextView>(R.id.b)
             headingTV.text=heading
             headingTV.setTextColor(Color.parseColor("#006064"))
+            headingTV.typeface = typeFace
             val titleTV = dialog.findViewById<TextView>(R.id.text_dialog)
             titleTV.text=message
+            titleTV.typeface=typeFace
 
             val okButton = dialog.findViewById<Button>(R.id.btn_dialog)
+            okButton.typeface=typeFace
             okButton.setOnClickListener { dialog.dismiss() }
 
             dialog.show()
