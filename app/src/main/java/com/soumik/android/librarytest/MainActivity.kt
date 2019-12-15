@@ -19,5 +19,6 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener { PopUp.success(this,"Success","Yes! I have done it!!") }
 
         button2.setOnClickListener { PopUp.error(this,"Error","Shit! I couldn't do it") }
+
     }
 }
