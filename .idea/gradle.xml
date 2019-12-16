@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/custompopup" />
             <option value="$PROJECT_DIR$/toaster" />
+            <option value="$PROJECT_DIR$/validator" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
