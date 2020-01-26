@@ -10,6 +10,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import kotlinx.android.synthetic.main.custom_exit.*
+import kotlinx.android.synthetic.main.custom_exit.iv_cancel
+import kotlinx.android.synthetic.main.custom_exit.iv_ok
+import kotlinx.android.synthetic.main.custom_exit.tv_heading
+import kotlinx.android.synthetic.main.custom_exit.tv_sub_title
+import kotlinx.android.synthetic.main.dialog_exit.*
 
 class Popup {
 
@@ -25,7 +30,7 @@ class Popup {
             dialog.setContentView(R.layout.custom_pop_up)
             val typeFace = ResourcesCompat.getFont(activity, font)
             val imageView = dialog.findViewById<ImageView>(R.id.a)
-            imageView.setImageResource(R.drawable.ic_checked)
+            imageView.setImageResource(R.drawable.ic_ok)
 
             val headingTV = dialog.findViewById<TextView>(R.id.b)
             headingTV.text = heading
@@ -125,6 +130,34 @@ class Popup {
             }
 
             val cancel = dialog.iv_cancel
+            cancel.setOnClickListener { dialog.dismiss() }
+
+            dialog.show()
+        }
+
+        fun exit(activity: Activity,heading: String,subTitle: String,icon: Int){
+            val dialog = Dialog(activity)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setCancelable(true)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.setContentView(R.layout.dialog_exit)
+
+            val headingTV = dialog.tv_heading_2
+            headingTV.text = heading
+
+            val titleTV = dialog.tv_sub_title_2
+            titleTV.text = subTitle
+
+            val appIcon = dialog.iv_app_icon
+            appIcon.setImageResource(icon)
+
+            val ok = dialog.iv_ok_2
+            ok.setOnClickListener {
+                activity.finishAffinity()
+                dialog.dismiss()
+            }
+
+            val cancel = dialog.iv_cancel_2
             cancel.setOnClickListener { dialog.dismiss() }
 
             dialog.show()
