@@ -9,7 +9,6 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
-import kotlinx.android.synthetic.main.custom_exit.*
 import kotlinx.android.synthetic.main.custom_exit.iv_cancel
 import kotlinx.android.synthetic.main.custom_exit.iv_ok
 import kotlinx.android.synthetic.main.custom_exit.tv_heading
@@ -30,7 +29,7 @@ class Popup {
             dialog.setContentView(R.layout.custom_pop_up)
             val typeFace = ResourcesCompat.getFont(activity, font)
             val imageView = dialog.findViewById<ImageView>(R.id.a)
-            imageView.setImageResource(R.drawable.ic_ok)
+            imageView.setImageResource(R.drawable.ic_exit_popup)
 
             val headingTV = dialog.findViewById<TextView>(R.id.b)
             headingTV.text = heading
@@ -57,7 +56,7 @@ class Popup {
             val typeFace = ResourcesCompat.getFont(activity, font)
 
             val imageView = dialog.findViewById<ImageView>(R.id.a)
-            imageView.setImageResource(R.drawable.ic_red_alert)
+            imageView.setImageResource(R.drawable.ic_red_alert_popup)
 
             val headingTV = dialog.findViewById<TextView>(R.id.b)
             headingTV.text = heading

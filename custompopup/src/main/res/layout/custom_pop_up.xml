@@ -17,7 +17,7 @@
             android:id="@+id/a"
             android:gravity="center"
             android:layout_marginTop="20dp"
-            android:src="@drawable/ic_red_alert"
+            android:src="@drawable/ic_red_alert_popup"
             android:scaleType="fitCenter"
             tools:ignore="ContentDescription" />
 
@@ -53,8 +53,8 @@
             android:text="Ok"
             android:id="@+id/btn_dialog"
             android:gravity="center_vertical|center_horizontal"
-            android:textColor="@drawable/t_design"
-            android:background="@drawable/b_design"
+            android:textColor="@drawable/t_design_popup"
+            android:background="@drawable/b_design_popup"
             android:layout_below="@+id/text_dialog"
             android:layout_marginBottom="20dp"
             android:layout_centerHorizontal="true" />
